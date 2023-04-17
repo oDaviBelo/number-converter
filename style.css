@@ -2,6 +2,8 @@ body {
     margin: 0;
     background-color: #04ee;
     color: #fff;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .calc-area {
