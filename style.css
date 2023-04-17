@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    background-color: #04ee;
+    color: #fff;
+}
+
+.calc-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100vh;
+    height: 100vh;
+    margin: auto;
+    background-color: royalblue;
+}
+
+footer {
+    margin: auto;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    text-align: center;
+}
+
