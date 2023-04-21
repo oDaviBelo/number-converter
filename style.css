@@ -7,6 +7,13 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .calc-area {
     display: flex;
     flex-direction: column;
@@ -108,3 +115,30 @@ figure img {
     height: 40px;
 }
 
+@media (min-width: 100px) and (max-width: 1020px){
+    body{
+        overflow-x: hidden !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    select{
+        width: 30vh;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+       
+    }
+    
+
+}
