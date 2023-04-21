@@ -1,9 +1,10 @@
 body {
     margin: 0;
-    background-color: #04ee;
+    background-color: #283142;
     color: #fff;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
 }
 
 .calc-area {
@@ -15,14 +16,95 @@ body {
     width: 100vh;
     height: 100vh;
     margin: auto;
-    background-color: royalblue;
+}
+
+.binres{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vh;
+    word-break: break-all;
+}
+select{
+    background-color: #283142;
+    color: #fff;
+    height: 35px;
+    width: 25vh;
+}
+option {
+    background-color: #283142;
+    color: #fff;
+    height: 15px;
+}
+
+input{
+    display: flex;
+    height: 50px;
+    width: 30%;
+    border-radius:30px;
+    font-size: 20px;
+    border: 3px solid#eee;
+    cursor: pointer;
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    display: flex;
+    height: 40px;
+    width: 15vh;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    justify-content: center;
+    align-items: center;
+    background-color: #5c71b3;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+:hover#button {
+    padding: 20px;
+}
+
+.copy_verification{
+    display: none;
+    height: 30px;
+    width: 100%;
+    border-radius: 20px;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_area{
+    display: flex;
+    gap: 15px;
+    
+}
+
+.copy{
+    display: none;
 }
 
 footer {
-    margin: auto;
-    width: 100%;
-    bottom: 0;
+    display: flex;
     position: fixed;
-    text-align: center;
+    bottom: 0;
+
+}
+footer p {
+    display: flex;
+    align-items: center;
+}
+figure{
+    display: flex;
+    gap: 10px;
+}
+figure img {
+    display: flex;
+    height: 40px;
 }
 

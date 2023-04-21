@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -24,21 +27,30 @@
         <option value="htod">HexaDecimal para Decimal</option>
         <option value="htob">HexaDecimal para Binário</option>
         <option value="htoo">HexaDecimal para Octal</option>
-
-
-
-
-
-
-
-
     </select>
     <input type="text" class="input">
     <p class="bin">Seu valor é:</p>
-    <h1 class="binres"></h1>
+    <div class="resArea">
+        <h1 class="binres"></h1>
+    </div>
 
-    <button id="button">Convert</button>
-    <footer>powered by odavibelo</footer>
+    <div class="button_area">
+        <div class="copy_verification_area">
+            <p class="copy_verification">Copiado!</p>
+        </div>
+        <button class="copy">Copiar</button> 
+    <button id="button">CONVERT</button>
+    </div>
+
+    
+    <footer>
+        <p>powered by odavibelo</p>
+        <figure>
+            <a href="https://github.com/oDaviBelo" target="_blank"><img src="assets/github-logo.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/davi-belo-948975264/" target="_blank"><img src="assets/linkedin.png" alt=""></a>
+
+        </figure>
+    </footer>
     </div>
     
     <script src="script.js"></script>

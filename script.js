@@ -1,13 +1,24 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 let button = document.querySelector('#button');
 let input = document.querySelector('.input');
 let resul = document.querySelector(".binres");
 let opt = document.querySelector('select');
+let copy = document.querySelector('.copy');
+let copyVerification = document.querySelector('.copy_verification');
 function converter() {
     let dec = +input.value;
     if ((opt === null || opt === void 0 ? void 0 : opt.value) === 'dtob') {
         if (isNaN(dec)) {
-            alert("Type a number");
+            resul.innerHTML = `Digite Somente números`;
         }
         else {
             resul.innerHTML = '';
@@ -18,7 +29,7 @@ function converter() {
     }
     else if ((opt === null || opt === void 0 ? void 0 : opt.value) === 'dtoo') {
         if (isNaN(dec)) {
-            alert("Type a number");
+            resul.innerHTML = `Digite Somente números`;
         }
         else {
             resul.innerHTML = '';
@@ -29,7 +40,7 @@ function converter() {
     }
     else if ((opt === null || opt === void 0 ? void 0 : opt.value) === 'dtoh') {
         if (isNaN(dec)) {
-            alert("Type a number");
+            resul.innerHTML = `Digite Somente números`;
         }
         else {
             resul.innerHTML = '';
@@ -48,7 +59,7 @@ function converter() {
             else {
                 if (isNaN(+num)) {
                     input.value = '';
-                    alert(`Digite apenas (0,1)`);
+                    resul.innerHTML = `Digite Somente 0 e 1`;
                 }
                 else {
                     bin();
@@ -234,8 +245,30 @@ function converter() {
             resul.innerHTML = octal;
         }
     }
+    copy.addEventListener('click', () => __awaiter(this, void 0, void 0, function* () {
+        setTimeout(() => {
+            copy.style.display = 'none';
+        }, 50);
+        try {
+            yield navigator.clipboard.writeText(resul.innerHTML);
+            console.log('Content copied to clipboard');
+            setTimeout(() => {
+                copyVerification.style.display = 'block';
+                setTimeout(() => {
+                    copyVerification.style.display = 'none';
+                }, 2000);
+            }, 100);
+        }
+        catch (err) {
+            console.error('Failed to copy: ', resul.innerHTML);
+        }
+    }));
 }
+;
 button.addEventListener('click', () => {
     input.innerHTML = '';
     converter();
+    setTimeout(() => {
+        copy.style.display = 'block';
+    }, 10);
 });

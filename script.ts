@@ -2,6 +2,9 @@ let button = document.querySelector('#button') as HTMLButtonElement;
 let input = document.querySelector('.input') as HTMLInputElement;
 let resul = document.querySelector(".binres") as any;
 let opt = document.querySelector('select');
+let copy = document.querySelector('.copy') as HTMLButtonElement;
+let copyVerification = document.querySelector('.copy_verification') as HTMLButtonElement;
+
 
 
 function converter(){
@@ -9,7 +12,7 @@ function converter(){
 
     if(opt?.value === 'dtob'){
         if(isNaN(dec)){
-            alert("Type a number")
+            resul.innerHTML = `Digite Somente números`
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(2);
@@ -18,7 +21,7 @@ function converter(){
         }
     } else if(opt?.value === 'dtoo'){
         if(isNaN(dec)){
-            alert("Type a number")
+            resul.innerHTML = `Digite Somente números`
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(8);
@@ -27,7 +30,7 @@ function converter(){
         }
     } else if(opt?.value === 'dtoh'){
         if(isNaN(dec)){
-            alert("Type a number")
+            resul.innerHTML = `Digite Somente números`
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(16);
@@ -48,7 +51,8 @@ function converter(){
             else{
                 if(isNaN(+num)){
                     input.value = ''
-                    alert(`Digite apenas (0,1)`)
+                    resul.innerHTML = `Digite Somente 0 e 1`
+
                 }else{  
                     bin()
                 }
@@ -261,11 +265,35 @@ else if(opt?.value === 'otoh'){
         }
         
     }
-}
+    copy.addEventListener('click', async ()=>{
+
+        setTimeout(()=>{
+            copy.style.display = 'none';
+        },50)
+        try {
+            await navigator.clipboard.writeText(resul.innerHTML);
+            console.log('Content copied to clipboard');
+            setTimeout(()=>{
+                copyVerification.style.display = 'block';
+                
+                setTimeout(()=>{
+                    copyVerification.style.display = 'none';
+                },2000)
+            },100)
+          } catch (err) {
+            console.error('Failed to copy: ', resul.innerHTML);
+          }
+  
+});
+};
+
 
 
 button.addEventListener('click', ()=>{
     input.innerHTML = ''
     converter()
+    setTimeout(() => {
+        copy.style.display = 'block';
+    },10)
 });
 
