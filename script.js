@@ -9,11 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 let button = document.querySelector('#button');
+let body = document.querySelector('body');
 let input = document.querySelector('.input');
 let resul = document.querySelector(".binres");
 let opt = document.querySelector('select');
 let copy = document.querySelector('.copy');
 let copyVerification = document.querySelector('.copy_verification');
+let buttonClear = document.querySelector('#button_clear');
+let footer = document.querySelector('footer');
 function converter() {
     let dec = +input.value;
     if ((opt === null || opt === void 0 ? void 0 : opt.value) === 'dtob') {
@@ -268,7 +271,30 @@ function converter() {
 button.addEventListener('click', () => {
     input.innerHTML = '';
     converter();
+    buttonClear.style.display = 'block';
+    if (window.screen.availWidth < 1234 && button.getBoundingClientRect().y >= footer.getBoundingClientRect().y || buttonClear.getBoundingClientRect().y >= footer.getBoundingClientRect().y) {
+        footer.style.position = 'relative';
+    }
+    if (window.screen.availWidth > 1234 && button.getBoundingClientRect().y >= footer.getBoundingClientRect().y || buttonClear.getBoundingClientRect().y >= footer.getBoundingClientRect().y) {
+        footer.style.position = 'relative';
+    }
+    body.style.overflowY = 'auto';
     setTimeout(() => {
         copy.style.display = 'block';
     }, 10);
+});
+buttonClear.addEventListener('click', () => {
+    resul.innerHTML = '';
+    input.value = '';
+    button.style.display = 'block';
+    copy.style.display = 'none';
+    if (window.screen.availWidth < 1234) {
+        footer.style.position = 'fixed';
+    }
+    if (window.screen.availWidth > 1234) {
+        footer.style.position = 'fixed';
+    }
+    if (button.style.display === 'block') {
+        buttonClear.style.display = 'none';
+    }
 });

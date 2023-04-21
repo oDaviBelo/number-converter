@@ -1,18 +1,19 @@
 let button = document.querySelector('#button') as HTMLButtonElement;
+let body = document.querySelector('body') as HTMLBodyElement;
 let input = document.querySelector('.input') as HTMLInputElement;
 let resul = document.querySelector(".binres") as any;
 let opt = document.querySelector('select');
 let copy = document.querySelector('.copy') as HTMLButtonElement;
 let copyVerification = document.querySelector('.copy_verification') as HTMLButtonElement;
-
-
+let buttonClear = document.querySelector('#button_clear') as HTMLButtonElement;
+let footer:any = document.querySelector('footer'); 
 
 function converter(){
     let dec = +input.value;
 
     if(opt?.value === 'dtob'){
         if(isNaN(dec)){
-            resul.innerHTML = `Digite Somente números`
+            resul.innerHTML = `Digite Somente números`;
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(2);
@@ -21,7 +22,7 @@ function converter(){
         }
     } else if(opt?.value === 'dtoo'){
         if(isNaN(dec)){
-            resul.innerHTML = `Digite Somente números`
+            resul.innerHTML = `Digite Somente números`;
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(8);
@@ -30,7 +31,7 @@ function converter(){
         }
     } else if(opt?.value === 'dtoh'){
         if(isNaN(dec)){
-            resul.innerHTML = `Digite Somente números`
+            resul.innerHTML = `Digite Somente números`;
         } else{
             resul.innerHTML = '';
             let bin = dec.toString(16);
@@ -45,16 +46,16 @@ function converter(){
 
         arrSort.map((x)=>{
             if(x === '2' ||x === '3' ||x === '4' ||x === '5' ||x === '6' ||x === '7' ||x === '8' ||x === '9'){
-                resul.innerHTML = `Digite Somente 0 e 1`
+                resul.innerHTML = `Digite Somente 0 e 1`;
 
             }
             else{
                 if(isNaN(+num)){
-                    input.value = ''
-                    resul.innerHTML = `Digite Somente 0 e 1`
+                    input.value = '';
+                    resul.innerHTML = `Digite Somente 0 e 1`;
 
                 }else{  
-                    bin()
+                    bin();
                 }
             }
         })
@@ -72,9 +73,9 @@ function converter(){
                 }else{
                 resul.innerHTML = '';
                     let calc = newNum*pow;
-                    newArr[i] = calc
+                    newArr[i] = calc;
                     sum += newArr[i];   
-                    resul.innerHTML += `${sum}`
+                    resul.innerHTML += `${sum}`;
                 }
             }
             return sum;
@@ -89,14 +90,14 @@ function converter(){
         
         arrSort.map((x)=>{
             if(x === '2' ||x === '3' ||x === '4' ||x === '5' ||x === '6' ||x === '7' ||x === '8' ||x === '9'){
-                resul.innerHTML = `Digite Somente 0 e 1`
+                resul.innerHTML = `Digite Somente 0 e 1`;
 
             } else{
-                exe()
+                exe();
             }
 
             function exe(){
-                resul.innerHTML = `${oct}`
+                resul.innerHTML = `${oct}`;
             }
 
             
@@ -113,14 +114,14 @@ function converter(){
         
         arrSort.map((x)=>{
             if(x === '2' ||x === '3' ||x === '4' ||x === '5' ||x === '6' ||x === '7' ||x === '8' ||x === '9'){
-                resul.innerHTML = `Digite Somente 0 e 1`
+                resul.innerHTML = `Digite Somente 0 e 1`;
 
             } else{
-                exe()
+                exe();
             }
 
             function exe(){
-                resul.innerHTML = `${oct}`
+                resul.innerHTML = `${oct}`;
             }
 
             
@@ -136,7 +137,7 @@ function converter(){
             if(x === '8' || x === '9'){
                 resul.innerHTML = `Digite Somente Dígitos entre 0 e 7`
             }else{
-                oct()
+                oct();
             }
         })
 
@@ -153,9 +154,9 @@ function converter(){
                 }else{
                 resul.innerHTML = '';
                     let calc = newNum*pow;
-                    newArr[i] = calc
+                    newArr[i] = calc;
                     sum += newArr[i];   
-                    resul.innerHTML += `${sum}`
+                    resul.innerHTML += `${sum}`;
                 }
             }
             return sum;
@@ -170,9 +171,9 @@ else if(opt?.value === 'otoh'){
 
         arrSort.map((x)=>{
             if(x === '8' || x === '9'){
-                resul.innerHTML = `Digite Somente Dígitos entre 0 e 7`
+                resul.innerHTML = `Digite Somente Dígitos entre 0 e 7`;
             }else{
-                oct()
+                oct();
             }
         })
 
@@ -189,12 +190,12 @@ else if(opt?.value === 'otoh'){
                 }else{
                 resul.innerHTML = '';
                     let calc = newNum*pow;
-                    newArr[i] = calc
+                    newArr[i] = calc;
                     sum += newArr[i];   
                 }
             }
             let newHex = sum.toString(16)
-            resul.innerHTML += `${newHex}`
+            resul.innerHTML += `${newHex}`;
             
     }
     
@@ -206,9 +207,9 @@ else if(opt?.value === 'otoh'){
 
         arrSort.map((x)=>{
             if(x === '8' || x === '9'){
-                resul.innerHTML = `Digite Somente Dígitos entre 0 e 7`
+                resul.innerHTML = `Digite Somente Dígitos entre 0 e 7`;
             }else{
-                oct()
+                oct();
             }
         })
 
@@ -225,12 +226,12 @@ else if(opt?.value === 'otoh'){
                 }else{
                 resul.innerHTML = '';
                     let calc = newNum*pow;
-                    newArr[i] = calc
+                    newArr[i] = calc;
                     sum += newArr[i];   
                 }
             }
             let bin = sum.toString(2)
-            resul.innerHTML += `${bin}`
+            resul.innerHTML += `${bin}`;
     }
     
     } 
@@ -239,7 +240,7 @@ else if(opt?.value === 'otoh'){
         let num:any = input.value;
         const hexToDecimal = parseInt(num,16)
         if(isNaN(+hexToDecimal) === true){
-            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`
+            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`;
         }else{
             resul.innerHTML = hexToDecimal;
         }
@@ -250,7 +251,7 @@ else if(opt?.value === 'otoh'){
         let hexToDecimal = parseInt(num,16)
         let bin = hexToDecimal.toString(2)
         if(isNaN(+bin) === true){
-            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`
+            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`;
         }else{
             resul.innerHTML = bin;
         }
@@ -259,7 +260,7 @@ else if(opt?.value === 'otoh'){
         let hexToDecimal = parseInt(num,16)
         let octal = hexToDecimal.toString(8)
         if(isNaN(+octal) === true){
-            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`
+            resul.innerHTML = `Digite Somente Teclas Alfabéticas e/ou Númericas`;
         }else{
             resul.innerHTML = octal;
         }
@@ -292,8 +293,35 @@ else if(opt?.value === 'otoh'){
 button.addEventListener('click', ()=>{
     input.innerHTML = ''
     converter()
+    
+    buttonClear.style.display = 'block';
+    if(window.screen.availWidth < 1234 && button.getBoundingClientRect().y >= footer.getBoundingClientRect().y || buttonClear.getBoundingClientRect().y >= footer.getBoundingClientRect().y){
+        footer.style.position = 'relative';      
+    }
+    if(window.screen.availWidth > 1234 && button.getBoundingClientRect().y >= footer.getBoundingClientRect().y || buttonClear.getBoundingClientRect().y >= footer.getBoundingClientRect().y){
+        footer.style.position = 'relative'; 
+              
+    }
+    body.style.overflowY = 'auto'
+    
     setTimeout(() => {
         copy.style.display = 'block';
     },10)
 });
 
+buttonClear.addEventListener('click', ()=>{
+    resul.innerHTML = '';
+    input.value = '';
+    button.style.display = 'block';
+    copy.style.display = 'none';
+    if(window.screen.availWidth < 1234){
+    footer.style.position = 'fixed';        
+    }
+    if(window.screen.availWidth > 1234){
+        footer.style.position = 'fixed';        
+        }
+
+    if(button.style.display === 'block'){
+        buttonClear.style.display = 'none'
+    }
+});

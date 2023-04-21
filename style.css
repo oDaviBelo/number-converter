@@ -72,9 +72,12 @@ button{
     font-family: 'Roboto', sans-serif;
 }
 
-:hover#button {
-    padding: 20px;
+
+
+#button_clear{
+    display: none;
 }
+
 
 .copy_verification{
     display: none;
@@ -88,8 +91,10 @@ button{
 
 .button_area{
     display: flex;
-    gap: 15px;
-    
+    gap: 25px;
+    max-width: 100vh;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .copy{
@@ -118,9 +123,30 @@ figure img {
 @media (min-width: 100px) and (max-width: 1020px){
     body{
         overflow-x: hidden !important;
+        overflow-y:auto !important;
         display: flex;
         justify-content: center;
         align-items: center;
+        font-size: 15px;
+        height:auto;
+    }
+    .calc-area{
+        height:auto;
+
+    }
+    .calc-area h1{
+        display: flex;
+        
+    }
+
+    .binres{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100vh;
+        word-break: break-all;
+        height: 100%;
+        max-height: fit-content;
     }
 
     select{
@@ -130,6 +156,8 @@ figure img {
     footer{
         display: flex;
         flex-direction: column;
+        bottom: 0;
+        
     }
 
     footer p {
@@ -139,6 +167,15 @@ figure img {
         left: 0;
        
     }
+    footer {
+        display: flex;
+        position:-webkit-sticky;
+        bottom: 0;
+    }
+
+    
+
     
 
 }
+
