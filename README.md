@@ -1,4 +1,4 @@
-Projeto Desenvolvido com fins de educação própria. 
+Projeto desenvolvido com fins de educação própria. 
 
 Desenvolvido por: Davi Belo
 
